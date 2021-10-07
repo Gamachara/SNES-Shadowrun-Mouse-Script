@@ -40,7 +40,7 @@ function ShadowrunMouse()
 	inp = input.get()
 	
 	if(memory.readbyte(mouseOn) == 255) then
-		--keep in range and adjust for offset
+		--keep in range and adjust for offset. (This version of LUA does not feature clamp)
 		x = math.max(3,math.min(inp.xmouse - 5,255))
 		y = math.max(3,math.min(inp.ymouse - 4,223))
 		memory.writebyte(mouseX,x)
